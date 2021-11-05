@@ -18,3 +18,23 @@
 <br>
 
 <p>A página faz uma requisição para o back-end que, por sua vez, busca a página inicial do site Vida de Programador. O back-end extrai os títulos e imagens dos posts da página e retorna os dados processados para o front-end que exibe os mesmos.<p>
+    
+<br>
+<br>
+<br>
+
+<p align="center"><h1>Arquivos Relevantes</h1></p>
+
+<br>
+<br>
+
+<p>Os arquivos releventes são os seguintes:<p>
+
+<p>
+	<ul>
+		<li>routes/api.php</li>
+		<li>public/js/logica.js</li>
+		<li>public/css/estilo.css</li>
+		<li>resources/views/index.blade.php</li>
+	</ul>
+</p>

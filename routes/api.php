@@ -24,9 +24,13 @@ Route::get('/obter-resposta', function (Request $request) {
 	preg_match_all(
 		'/.*class\=\"post(\s|\").*\n.*\"\>(.*)\<.*(\n.*){11}.*class\=\"entry\".*\n.*src\=\"(.*)\"\salt.*/',
 		$resposta,
-		$resultado,
+		$resultados,
 		PREG_SET_ORDER
 	);
 
-    return ['dados'=> $resultado];
+	$resultadoFinal = array_map(function($resultado) {
+		return ['titulo'=> $resultado[2], 'imagemURL'=> $resultado[4]];
+	}, $resultados);
+
+    return ['dados'=> $resultadoFinal];
 });
