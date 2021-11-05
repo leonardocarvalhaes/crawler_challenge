@@ -8,9 +8,7 @@ document.getElementById('botao').addEventListener('click', async (evento) => {
 		let respostaJson = await resposta.json()
 		let resultados = respostaJson.dados
 
-		divResultados.innerHTML = resultados.map((resultado) => {
-			return '<article><h1>' + resultado.titulo + '</h1><img src="' + resultado.imagemURL + '" /></article>'
-		}).join('')
+		divResultados.innerHTML = resultados.map(resultado => '<article><h1>' + resultado.titulo + '</h1><img src="' + resultado.imagemURL + '" /></article>').join('')
 	} catch (erro) {
 		console.log(erro)
 	} 
