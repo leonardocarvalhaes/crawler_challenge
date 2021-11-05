@@ -1,7 +1,7 @@
 document.getElementById('botao').addEventListener('click', async (evento) => {
-	try {
-		const divResultados = document.getElementById('resultados')
-		
+	const divResultados = document.getElementById('resultados')
+	
+	try {	
 		divResultados.innerHTML = 'Carregando conteúdo...'
 
 		let resposta = await fetch('/api/obter-resposta')
@@ -11,5 +11,7 @@ document.getElementById('botao').addEventListener('click', async (evento) => {
 		divResultados.innerHTML = resultados.map(resultado => '<article><h1>' + resultado.titulo + '</h1><img src="' + resultado.imagemURL + '" /></article>').join('')
 	} catch (erro) {
 		console.log(erro)
-	} 
+
+		divResultados.innerHTML = 'Ooops! Algo deu errado, tente novamente mais tarde...'
+	}
 })
